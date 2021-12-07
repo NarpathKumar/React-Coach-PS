@@ -1,0 +1,19 @@
+.PLPTilesSection{
+    margin-top: 24px;
+    padding-top: 24px;
+}
+.FiltersContainer{
+    padding-right: 24px;
+}
+.TilesContainer{
+    padding-left: 24px;
+}
+
+@media screen and (max-width: 768px){
+    .PLPTilesSection{
+        padding-top: 0;
+    }
+    .TilesContainer{
+        padding-left: 0;
+    }
+  }

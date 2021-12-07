@@ -1,0 +1,385 @@
+// coh_NA Variables
+
+/* ---------
+ COLORS
+--------- */
+$color-primary: #000001;
+$color-secondary: #fffffe;
+$color-neutral: #333333;
+$color-neutral-dark: #333333;
+$color-neutral-inactive: #d8d8d8;
+$color-neutral-light: #f7f7f7;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-standout: #333333;
+$color-scrim-80: rgba(0, 0, 0, 0.8);
+$color-scrim-50: rgba(0, 0, 0, 0.5);
+$color-success: #2D9D78;
+$color-error: #EE0011;
+$color-standout-light: #edf4ff;
+$color-account-bg: #f5f7f8;
+$color-success-light: #f0fff4;
+$color-error-light: #ffeef0;
+$grey: #ebebeb;
+$color-cool-grey: #f5f7f8;
+$color-checkout-bg: #f2f2f2;
+$color-white-10: rgba(255, 255, 255, 0.1);
+$color-white-50: rgba(255, 255, 255, 0.5);
+$color-neutral-grey: #575757;
+$color-purple-grey: #a2b2c8;
+$color-brown-red: #caa9ac;
+$color-sale: #cc0000;
+$color-image-background:#f0f0f0;
+$color-green:#099d69;
+$color-sky-blue: #82c0f3;
+
+
+/* ---------
+ SPACERS
+--------- */
+$spacer: 16px !default;
+$spacers: (
+    0   : 0,
+    'xxs': ($spacer * 0.125),        // 2px
+    'xs': ($spacer * 0.25),         // 4px
+    'xs1': ($spacer * 0.375),       // 6px
+    'sm': ($spacer * 0.5),          // 8px
+    'sm1': ($spacer * 0.75),        // 12px
+    'sm2': ($spacer * 0.875),       // 14px
+    'md': ($spacer * 1),            // 16px
+    'md1': ($spacer * 1.125),       // 18px
+    'md2': ($spacer * 1.25),        // 20px
+    'lg': ($spacer * 1.5),          // 24px
+    'lg1': ($spacer * 1.75),        // 28px
+    'xl': ($spacer * 2),            // 32px
+    'xl2': ($spacer * 2.5),         // 40px
+    'xxl': ($spacer * 3),           // 48px
+    'xxxl': ($spacer * 4),          // 64px
+    'large': ($spacer * 5),         // 80px
+    'jumbo': ($spacer * 6)          // 96px
+);
+
+/* ---------
+ ICON SIZES
+--------- */
+$icon-size: (
+    0: 0,
+    'xxs': 12px,
+    'xs': 16px,
+    'sm': 20px,
+    'md': 24px,
+    'lg': 32px,
+    'xl': 40px,
+    'xxl': 44px,
+    'xxxl': 48px,
+    'jumbo': 60px,
+    'jumbo1': 64px,
+    'jumbo2': 74px,
+    'jumbo3': 80px,
+    'jumboLg': 114px
+);
+/* ---------
+BUTTON SPACERS
+---------- */
+
+$btn-spacers: (
+    'xs': 5px,
+    'sm1': 6px,
+    'sm2': 7px,
+    'md1': 10px,
+    'md2': 11px,
+    'md3': 12px,
+    'md4': 13px,
+    'md5': 15px,
+    'lg': 23px
+);
+
+/* ---------
+GRID SPACERS
+---------- */
+$grid-gutter-width: 24px;
+$half-gutter-space: 12px;
+
+/* ---------
+ OUTLINE VARIABLES
+--------- */
+$outline-width-default: 2px;
+$outline-style-solid: solid;
+
+/* ---------
+ BORDER VARIABLES
+--------- */
+$border-style-solid: solid;
+$border-style-dashed: dashed;
+$border-style-dotted: dotted;
+$border-width-default: 1px;
+$border-width-thick: 4px;
+$border-width-thick-double: 12px;
+$border-radius-default: 2px;
+$half-border-radius: 50%;
+$border-radius-slick-dots: 4px;
+$border-radius-circle-icon: 15px;
+
+/* ---------
+ OPACITY
+---------- */
+$opacity-full: 1;
+$opacity-half: 0.5;
+$opacity-semi-half: 0.4;
+$opacity-quarter: 0.25;
+
+/* ----------
+Z-INDECES
+---------- */
+$carousel-icons-z-index: 10;
+$page-header-z-index: 2;
+
+/* ---------
+ LINE HEIGHTS
+--------- */
+$line-height: (
+    'default': normal,
+    'xs': 1.1,
+    'sm': 1.15,
+    'sm1': 1.2,
+    'rg': 1.25,
+    'md': 1.3,
+    'lg': 1.35,
+    'lg1': 1.40,
+    'lg2': 1.43,
+    'xl': 1.5,
+    'xxl': 1.6,
+    'xxxl': 2
+);
+
+/* ---------
+ LETTER SPACINGS
+--------- */
+$letter-spacing: (
+    'none': 0px,
+    'xxs': 0.1px,
+    'xs': 0.2px,
+    'sm': 0.4px,
+    'md': 0.6px,
+    'md1': 0.75px,
+    'lg': 0.8px,
+    'xl': 1px,
+    'xl1': 1.1px,
+    'xxl': 1.2px,
+    'double': 1.25px,
+    'doublelg': 1.75px
+);
+
+/* ---------
+ Animation
+---------- */
+$animation-duration: 0.3s;
+
+/* --------
+MODAL VARIABLES
+----------*/
+
+// Modal Opacity
+$modal-bg-opacity: 0.8;
+
+// Modal Z-indexes
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-close:                      10;
+$zindex-allreview-title:            99;
+$zindex-allreview-header:           100;
+
+// Modal Margins
+$modal-dialog-margin:               .5rem !default;
+
+// Modal Animation Variables
+$modal-fade-transform:              translate(0, -50px) !default;
+$modal-show-transform:              none !default;
+$modal-transition:                  transform $animation-duration ease-out !default;
+
+/* ==========================================================================
+    FONT VARIABLES
+========================================================================== */
+
+// Font Family
+$font-family-primary: 'HelveticaLTPro-Roman', Arial, sans-serif;
+$font-family-secondary: 'BemboMTPro-Regular';
+$font-family-helvetica-bold: 'HelveticaLTPro-Bold', Arial, sans-serif;
+$font-family-helvetica-inserat: 'HelveticaInseratLTStd-Roman', Arial, sans-serif;
+
+// Font Weight
+$font-weight-normal: normal;
+$font-primary-md-weight: 500;
+
+// Font Sizes
+$base-font-size: 14px;
+
+$font-size: (
+    'xxxs': calculateRem(8px),             //0.571rem
+    'xxs': calculateRem(10px),             // 0.714rem
+    'xxs1': calculateRem(11px),            // 0.78rem
+    'xs': calculateRem(12px),              // 0.857rem
+    'sm': calculateRem(14px),              // 1rem
+    'md': calculateRem(16px),              // 1.143rem
+    'md1': calculateRem(18px),             // 1.285rem
+    'lg': calculateRem(20px),              // 1.429rem
+    'xl': calculateRem(24px),              // 1.714rem
+    'xl1': calculateRem(26px),             // 1.857rem
+    'xxl': calculateRem(28px),             // 2rem
+    'xxl1': calculateRem(30px),            // 2.14rem
+    'double': calculateRem(32px),          // 2.286rem
+    'double1': calculateRem(36px),         // 2.57rem
+    'doublelg': calculateRem(40px),        // 2.857rem
+    'doublelg1': calculateRem(44px),       // 3.142rem
+    'triple': calculateRem(48px),          // 3.428rem
+    'triple1': calculateRem(56px),         // 4rem
+    'triple2': calculateRem(60px)          // 4.285rem
+);
+
+// Common Global Variables
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+
+/* ----------
+FORM VARABLES
+----------*/
+$textarea-min-height: 100px;
+$input-vertical-padding: 13px;
+$input-horizontal-padding: 15px;
+$disabled-radio-btn-opacity: 0.3;
+$radio-btn-outer-top: 12px;
+$radio-btn-inner-top: 6px;
+$radio-btn-inner-left: 6px;
+$checkbox-inner-left: 9px;
+$checkbox-inner-top: 5px;
+$checkbox-inner-width: 6px;
+$checkbox-inner-height: 10px;
+$checkbox-inner-transform: rotate(45deg);
+
+/* -----------
+SLICK CAROUSEL VARIABLES
+------------ */
+$carousel-dots-size: 6px;
+
+
+/* ----------
+PLACEHOLDER VARIABLES
+------------ */
+$ph-bg:                   $color-secondary;
+$ph-color:                $color-neutral-light;
+$ph-border-radius:        $border-radius-default;
+
+$ph-gutter:               $grid-gutter-width;
+$ph-spacer:               map-get($spacers, 'md');
+
+$ph-avatar-border-radius: 50%;
+
+$ph-animation-duration: 1s;
+
+$ph-animation-zindex: 0;
+
+$ph-animation-opacity: 0.35;
+
+//Reveiw and rating
+$review-skeleton-item-height: 12px;
+$review-skeleton-item-height-xs: 8px;
+$review-skeleton-item-height-md: 15px;
+$review-skeleton-item-height-lg: 22px;
+$write-review-radio-p-vertical: 3px;
+
+// Navigation menu
+$nav-padding-spacer: 12px;
+$nav-search-block-height: 60px;
+$nav-search-input-field-height: 24px;
+$nav-inlineimage-mobile-width: 40px;
+$nav-category-item-height: 48px;
+
+// Cart Page
+$undo-remove-toast-msg-width: 536px;
+$undo-toast-msg-top-spacer: 3px;
+$undo-toast-msg-bottom-spacer: 7px;
+
+// Apple Pay Cart
+$applepay-cart-button-height: 48px;
+$applepay-logo-width: 49px;
+$applepay-logo-height: 20px;
+
+//Product tile skeleton
+$product-loader-tile-height: 186px;
+$product-loader-tile-height-md: 228px;
+$product-loader-tile-listing-height-md: 258px;
+$product-loader-tile-details-height: 14px;
+$product-loader-tile-details-height-md: 18px;
+
+// Product Non-Swatchable Attribute Variables
+$product-attribute-padding-x: 7px;
+$product-attribute-padding-y: 10px;
+$product-attribute-margin-2: map-get($spacers, 'xs');
+$product-attribute-margin-3: map-get($spacers, 'md');
+$product-attribute-margin-4: map-get($spacers, 'lg');
+$product-attribute-margin-6: 40px;
+$product-attribute-margin-7: map-get($spacers, 'xxl');
+
+
+// Search
+$inputbox-padding: 14px;
+$inputbox-right-position: 56px;
+
+// Product Tile
+$swatch-carousel-arrow-spacer: 8px;
+$swatch-arrow-width: 16px;
+$swatch-width-small: 24px;
+$swatch-width-large: 24px;
+$swatch-height-small: 24px;
+$swatch-height-large: 24px;
+
+// Search Refinements
+$header-box-shadow-voffset: 1px;
+$header-box-shadow-blur: 4px;
+$header-box-shadow-color: $box-shadow-color;
+$applied-filter-border-radius: 12px;
+$refinement-accrodion-heading-margin: 14px;
+$checkbox-filter-min-height: 24px;
+$left-rail-height-margin: map-get($spacers, 'jumbo');
+$filter-set-disabled-opacity: $opacity-quarter;
+$ted-desktop-margin-left: 45px;
+$no-prod-search-desktop-bottom-space: 335px;
+$no-prod-search-mobile-bottom-space: 362px;
+
+// PLP Sort variables
+$sort-by-custom-select-top-offset: 24px;
+
+/* ----------
+BADGE VARABLES
+----------*/
+$badge-label-font-weight : 700;
+$badge-label-font-size : 9px;
+$badge-label-line-height : 1.11;
+$badge-label-spacer: 9px;
+$badge-label-msg-color: #626262;
+
+// Carousel arrow spacer
+$slickcarousel-arrow-spacer: 68px;
+
+//Custom scrollbar
+$custom-scroll-color: $color-neutral-inactive;
+$custom-scroll-size: 4px;
+
+// Custom Dropdown Variables
+$custom-dropdown-menu-top-offset: 24px;
+$custom-dropdown-menu-right: 0px;
+$custom-dropdown-menu-z-index: 10;
+$custom-dropdown-menu-width: 190px;
+$custom-dropdown-menu-height: auto;
+$custom-dropdown-icon-rotation: 180deg;
+$custom-dropdown-box-shadow-voffset: 1px;
+$custom-dropdown-box-shadow-blur: 4px;
+$custom-dropdown-box-shadow-color: $box-shadow-color;
+
+// Custom Scrollbar variables
+$custom-scrollbar-mask-color: $color-black;
+$custom-scrollbar-mask-img-width: 17px;
+$custom-scrollbar-width: 4px;
+$custom-scrollbar-height: 4px;
+$custom-scrollbar-b-radius: $border-radius-default;
+$custom-scrollbar-mask-size: 101% 20000px;
+$custom-scrollbar-thumb-color: $color-neutral-inactive;

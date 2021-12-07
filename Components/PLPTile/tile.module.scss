@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+@import "../../styles/typography.scss";
+
+.Title {
+    @include body-text-md(true);
+    margin-top: map-get($spacers, 'sm1');
+}
+.Price {
+    @include body-text-sm(true);
+    margin-top: map-get($spacers, 'sm');
+}
