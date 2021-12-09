@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 //Redux
 import { connect } from "react-redux";
@@ -10,40 +10,64 @@ import { bindActionCreators } from "redux";
 import * as PLPActions from "../../redux/actions/plpActions";
 
 //Chakra UI
-import { Heading, Box, Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Heading, Box, Flex, Grid} from "@chakra-ui/react";
 
 //Components
 import BreadCrumbs from "../../Components/BreadCrumbs/breadcrumbs";
 import Tedbar from "../../Components/Tedbar/tedbar";
 import ProductTile from "../../Components/PLPTile/tile";
+import ErrorTile from "../../Components/ErrorMessage/error"
+import LazyTemplate from '../../Components/LazyPlpTemplate/lazyTemplate';
 
 //Module Classes
 import classes from "./plp.module.scss";
 
+//Utils
+import { plpSorting } from '../../utils/commonMethods'
+import { ERROR_TYPE } from  '../../utils/constants'
+
 const Category = (props) => {
-  let hiddenRef = useRef();
-
+  //Router props
   const { query } = useRouter();
-  const data = props.serverData;
-  const Tiles = data.hits.map((tileData, index, arr) => {
-    return <ProductTile key={tileData.name} data={tileData} ref={index == (arr.length-1)? hiddenRef: null}/>;
-  });
 
-  const scrollHandler = () => {
-    console.log(hiddenRef)
-    if (hiddenRef.current && ((window.pageYOffset + window.innerHeight) >= hiddenRef.current.offsetTop))
-      console.log(`Hidden element is now visible`);
-  };
+  //Local state
+  let [sortingType, setSort] = useState("ascending");
 
-  useEffect(() => {
+  //Variables 
+  let data;
+  let Tiles;
+  let hits;
+  let currentCategory = query.category;
+  let storeDataKeys = Object.keys(props.plpData)
+
+  //Variable which will say if the store is updated or not
+  let isStoreUpdated = storeDataKeys.length && storeDataKeys.includes(currentCategory);
+
+  //Checking if the store is updated with the current Category
+  isStoreUpdated && props.plpData[query.category]? (
+    data = props.plpData[query.category],
+    hits = plpSorting(data.hits, sortingType),
+    hits.length ?
+    Tiles = hits.map((tileData, index, arr) => {
+      return <ProductTile key={index+1} data={tileData} isRef={index == (arr.length-1)? true: false}/>;
+    })
+    : Tiles = <ErrorTile mt={"100px"} message="OOPS There are no such products" type={ERROR_TYPE.INFO}/>
+  ): null
+
+  //Component functions
+  const updateSortingType = (type)=>{
+    setSort(type);
+  }
+
+  //Adding serverData to redux store
+  useEffect( async () => {
     if (!props.plpData[query.category]) {
-      props.addPlpData(props.serverData);
+      await props.addPlpData(query.category, props.serverData);
     }
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, []);
+  }, [currentCategory]);
 
   return (
+    isStoreUpdated?
     <div>
       <Head>
         <title>{data.CurrentPageMetaData.title}</title>
@@ -74,6 +98,7 @@ const Category = (props) => {
             <Tedbar
               noOfProducts={data.productSearch.realPageSize}
               filterArr={data.productSearch.productSort.options}
+              updateSortingType={updateSortingType.bind(this)}
             />
             <Grid
               templateColumns={[
@@ -90,10 +115,11 @@ const Category = (props) => {
         </Flex>
       </Box>
     </div>
+    : <div></div>
   );
 };
 
-//Component Initial Props
+// Component Initial Props
 Category.getInitialProps = async ({ query }) => {
   let req = await fetch(`http://localhost:3000/api/plp/${query.category}/0`);
   let data = await req.json();

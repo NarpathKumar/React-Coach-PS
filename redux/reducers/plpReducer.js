@@ -6,8 +6,9 @@ let initialState = {
 const plpReducer = (state = initialState, action) => {
   switch (action.type) {
     case t.addPlpData:
-      let data = action.data;
-      return {...state, data};
+      let category = action.data.category 
+      let data = action.data.categoryData;
+      return {...state, [category] : data};
     case t.updatePlpData:
         return state;
     default:

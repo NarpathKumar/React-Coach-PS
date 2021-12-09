@@ -1,7 +1,7 @@
 import * as t from "../types";
 
-export function addPlpData(data) {
-  return { type: t.addPlpData, data: data };
+export function addPlpData(category, categoryData) {
+  return { type: t.addPlpData, data: {category, categoryData} };e
 }
 
 export function updatePlpData(data) {
