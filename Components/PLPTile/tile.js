@@ -3,21 +3,23 @@ import { Text, Box, Grid, GridItem, Image } from "@chakra-ui/react";
 import classes from "./tile.module.scss";
 import { useEffect, useRef } from "react";
 
-const ProductTile = ({ data, isRef }) => {
+const ProductTile = ({ data, isRef, setLazy }) => {
   let hiddenRef = useRef();
-  const pdpID = "C4823 B4/BK".replace("/", "_")
+  const pdpID = "C4823 B4/BK".replace("/", "_");
 
   const scrollHandler = () => {
     if (
       hiddenRef.current &&
       window.pageYOffset + window.innerHeight >= hiddenRef.current.offsetTop
-    )
+    ){
       console.log(`Hidden element is now visible`);
+      setLazy(true);  
+      window.removeEventListener("scroll", scrollHandler);
+    }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
   return (

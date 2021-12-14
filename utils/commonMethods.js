@@ -10,7 +10,7 @@ const sortAscending = (data) => {
     }
   }
 
-  console.log("sorted ascen")
+  console.log("sorted ascen");
 
   return arr;
 };
@@ -37,14 +37,18 @@ const bestseller = (data) => {
 };
 
 export const plpSorting = (data, type) => {
-    switch (type) {
-      case "ascending":
-        return sortAscending(data);
-      case "descending":
-        return sortDescending(data);
-      case "bestseller":
-        return bestseller(data);
-      default:
-        return data;
-    }
-  };
+  switch (type) {
+    case "ascending":
+      return sortAscending(data);
+    case "descending":
+      return sortDescending(data);
+    case "bestseller":
+      return bestseller(data);
+    default:
+      return data;
+  }
+};
+
+const plpFetch = ()=>{
+  
+}

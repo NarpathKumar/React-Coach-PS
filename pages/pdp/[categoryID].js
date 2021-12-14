@@ -14,6 +14,7 @@ import { Box, Flex, Image} from "@chakra-ui/react";
 //Components
 import HOC from "../../Components/HOC/hoc";
 import PDPImage from "../../Components/PDPImage/pdpImage";
+import PDPDesc from "../../Components/PDPDescription/pdpDesc";
 
 const PDP = (props) => {
   //Router props
@@ -39,7 +40,8 @@ const PDP = (props) => {
           <Box width="65%" height="530px" background="#F1F1F1">
             <PDPImage src="https://img1.cohimg.net/is/image/Coach/73995_b4eb1_a0?$desktopProduct$"/>
           </Box>
-          <Box width="35%" height="530px" background="red">
+          <Box width="35%" height="530px" pl="24px">
+            <PDPDesc />
           </Box>
         </Flex>
       </div>
